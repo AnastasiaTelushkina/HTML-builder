@@ -1,8 +1,8 @@
-
 const fs = require('fs');
 const path = require('node:path'); 
 const folderPath = "03-files-in-folder/secret-folder";
-fs.readdir(folderPath,{withFileTypes: true}, (err, files) => {  
+fs.readdir(folderPath,{withFileTypes: true}, (err, files) => {
+    if (err) throw err;  
     files.forEach((file) =>{ 
         if(file.isFile()){ 
             fs.stat(folderPath + "/" + file.name, (error, stats) => {
