@@ -9,5 +9,6 @@ stdin.on('data', data => {
   else process.exit();  
 }); 
 process.on('exit', () => stdout.write('Text saved'));
+process.on('SIGINT', () => process.exit()); 
  
  
